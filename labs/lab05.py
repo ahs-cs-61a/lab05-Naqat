@@ -32,23 +32,31 @@ class Keyboard: # q1
     >>> b2.times_pressed
     3
     """
-    def __init__(self, *args):
+    def __init__(self, x, y):
         """YOUR CODE HERE"""
-
+        self.buttons = []
+        self.buttons.append(x)
+        self.buttons.append(y)
 
     def press(self, info):
         """Takes in a position of the button pressed, and
         returns that button's output."""
 
         """YOUR CODE HERE"""
-
+        if info>=2:
+            return ''
+        self.buttons[info].times_pressed+=1
+        return self.buttons[info].key
 
     def typing(self, typing_input):
         """Takes in a list of positions of buttons pressed, and
         returns the total output."""
 
         """YOUR CODE HERE"""
-
+        temp = ""
+        for x in typing_input:
+            temp+=self.press(x)  
+        return temp
 
 # lab04: https://inst.eecs.berkeley.edu/~cs61a/su22/lab/lab04/
 
