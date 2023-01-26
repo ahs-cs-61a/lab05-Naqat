@@ -32,18 +32,21 @@ class Keyboard: # q1
     >>> b2.times_pressed
     3
     """
-    def __init__(self, x, y):
+    def __init__(self, *args):
         """YOUR CODE HERE"""
         self.buttons = {}
-        self.buttons[0] = x
-        self.buttons[1] = y
+        x = 0
+        for tings in args:
+            self.buttons[x]=tings
+            x+=1
+
 
     def press(self, info):
         """Takes in a position of the button pressed, and
         returns that button's output."""
 
         """YOUR CODE HERE"""
-        if info>=2:
+        if info>=len(self.buttons):
             return ''
         self.buttons[info].times_pressed+=1
         return self.buttons[info].key
