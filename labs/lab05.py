@@ -267,7 +267,7 @@ class Cat(Pet): # q5
 class NoisyCat(Cat): # q6
     """A Cat that repeats things twice."""
     def __init__(self, name, owner, lives=9):
-        # Is this method necessary? Why or why not?
+        # Is this method necessary? Why or why not? nah
         "*** YOUR CODE HERE ***"
         Cat.__init__(self, name, owner, lives)
     def talk(self):
@@ -358,9 +358,6 @@ class FreeChecking(Account): # q8
     free_withdrawals = 2
 
     "*** YOUR CODE HERE ***"
-    def __init__(self, account_holder):
-        Account.__init__(self, account_holder)
-    
     def withdraw(self, amount):
         self.free_withdrawals-=1
         if self.free_withdrawals<0:
